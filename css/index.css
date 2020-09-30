@@ -23,7 +23,21 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700
 }
 li{
-    font-size: 14px;
+    font-size: 18px;
+}
+img{
+    width: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    transition:all 2s;/*图片放大过程的时间*/
+    position: relative;
+}
+img:hover{
+    cursor: crosshair;
+    transform: scale(1.6);  /*以y轴为中心旋转*/
 }
 hr:before {
     position: absolute;
