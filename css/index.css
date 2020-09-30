@@ -19,11 +19,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
     position: relative;
     margin: 1rem 0 .7rem;
-    color: #344c67;
+    color: #4a617a;
     font-weight: 700
 }
 li{
-    font-size: 18px;
+    font-size: 16px;
 }
 img{
     width: 500px;
@@ -37,7 +37,7 @@ img{
 }
 img:hover{
     cursor: crosshair;
-    transform: scale(1.6);  /*以y轴为中心旋转*/
+    transform: scale(1.4);  /*以y轴为中心旋转*/
 }
 hr:before {
     position: absolute;
