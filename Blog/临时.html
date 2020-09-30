@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta name="viewport"content = ”width=device-width,initial-scale=1. maximum-scale="1,user-scalable=no"/>
+
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+
+
+
+    /* DIV */
+    div{
+        border: 1px solid red;
+        margin: 0 auto;
+        height: 50px;
+        width: 80px;
+    }
+
+    /* 浮动元素的上下左右居中 */
+    .float{
+        border: 1px solid red;
+        float: left;
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        left: 50%;
+        top: 50%;
+        margin:-50px 0 0 -100px;
+    }
+    /* 绝对定位的左右居中 */
+    .absolute{
+        border: 1px solid black;
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+
+
+    .三角形{
+        width: 0;
+        height: 0;
+        border-top: 40px solid transparent;
+        border-left: 40px solid transparent;
+        border-radius: 40px solid transparent;
+        border-bottom: 40px solid transparent;
+    }
+
+
+
+         
+
+    .渐进识别的方式{
+        background-color: #f1ee18;/*所有识别*/
+        .background-color:#00deff\9; /*IE6、7、8识别*/
+        +background-color:#a200ff;/*IE6、7识别*/
+        _background-color:#1e0bd1;/*IE6识别*/
+    }
+        
+
+    .margin上下重合问题例子{
+        
+        .aside{
+            margin-bottom: 100px;
+            width: 100px;
+            height: 150px;
+            background: #f66;
+        }  
+        .main{
+            margin-top: 100px;
+            height: 200px;
+            background: #fcc;
+        }
+        .text{
+        /*盒子main的外面包一个div，通过改变此div的属性使两个盒子分属于两个不同的BFC，以此来阻止margin重叠*/
+        overflow:hidden;
+        /*此时已经触发了BFC属性。*/
+       }
+    }
+       
+
+    p{
+        font-size: 10px;
+        -webkit-transform:scale(0.8);
+    }
+        /* 0.8是缩放比例 */
+
+
+
+
+</style>
+<body>
+
+    <div class="aside"></div>
+    <div class="text">
+       <div class="main"></div>
+    </div>
+       
+
+   
+
+   
+
+
+    
+
+
+
+
+
+
+
+
+</body>
+</html>

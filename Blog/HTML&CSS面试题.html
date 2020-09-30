@@ -1,39 +1,703 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML&CSS面试题</title>
-    <style>
-        .box{
-            width: 900px;
-            margin: 0 auto;
-            font-size: 20px;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <title>羽夕夕 Yuxixi</title>
+    <meta name="羽夕" content="90后青年，前端小白，学生，实习，缺乏社会的毒打">
+    <meta name="keywords" content="Java,Spring,个人博客，微信小程序，博客">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.css">
+    <script type="text/javascript">
+        if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+            alert('朋友，上古浏览器不支持呢~');
         }
-        code{
-            font-size: 20px;
-        }
-        p{
-            font-size: 20px;
-        }
-        ul{
-            font-size: 20px;
-        }
-    </style>
+    </script>
 </head>
 <body>
-    <div class="box">
-        <!-- 1 -->
-        <h1>什么是 HTML 语义化，有什么好处</h1>
-        <p>HTML语义化简单来说就是，段落使用<code>&lt;p&gt;&lt;/p&gt;</code>，侧边栏用<code>&lt;aside&gt;&lt;/aside&gt;</code>，主要内容使用<code>&lt;main&gt;&lt;/main&gt;</code>。</p>
-        <ul>
-            <li>有助于构架良好的HTML结构</li>
-            <li>有助于搜索引擎建立索引、抓取，有利于SEO</li>
-            <li>有利于不同设备的解析</li>
-            <li>有利于团队的开发维护</li>
-        </ul>
-        <!-- 2 -->
-        <h1>为什么要在html文件开头加上一个&lt;!DOCTYPE html&gt;</h1>
-    </div>
+<div id="body-wrap">
+    
+    <main id="content-outer">
+        <div class="layout_page" id="content-inner">
+            <div class="aside_content" id="aside_content">
+                <div class="card-widget card-info">
+                    <div class="card-content">
+                        <div class="card-info-avatar is-center">
+                            <img class="avatar-img" src="../img/logo.jpg" alt="avatar">
+                            <div class="author-info__name">羽夕</div>
+                            <div class="author-info__description">90后青年，前端小白，学生，实习，缺乏社会的毒打</div>
+                        </div>
+                        <div class="card-info-social-icons is-center">
+                            <a class="social-icon" href="https://github.com/Yu-Xi-Li/blog" target="_blank">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a class="social-icon" href="mailto:1490932592@qq.com" target="_blank">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+								
+                <div class="card-widget card-announcement">
+                    <div class="card-content">
+                        <div class="item-headline">
+                            <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                            <span>一言</span>
+                        </div>
+                        <div id="hitokoto"></div>
+                    </div>
+                </div>
+                <div class="card-widget card-announcement">
+                    <div class="card-content">
+                        <div class="item-headline">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <span>诗词佳句</span>
+                        </div>
+                        <div id="jinrishici-sentence"></div>
+                    </div>
+                </div>
+
+                <div class="card-widget card-webinfo">
+                    <div class="card-content">
+                        <div class="item-headline">
+                            <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            <span>站点信息</span>
+                        </div>
+                        <div class="webinfo">
+                            <div class="webinfo-item">
+                                访客量
+                                <div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div>
+                            </div>
+                            <div class="webinfo-item">
+                                <!-- 梦魇 贪婪 怜悯 -->
+                                访问量
+                                <div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <article id="page">
+                <div class="article-container">
+                    
+                    <hr>
+                    <!-- 1 -->
+                    <h2>1 什么是 HTML 语义化，有什么好处</h2>
+                    <ul>
+                        <li>
+                            HTML语义化简单来说就是，段落使用<code>&lt;li&gt;&lt;/li&gt;</code>，侧边栏用<code>&lt;aside&gt;&lt;/aside&gt;</code>，主要内容使用<code>&lt;main&gt;&lt;/main&gt;</code>。
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>有助于构架良好的HTML结构</li>
+                        <li>有助于搜索引擎建立索引、抓取，有利于SEO</li>
+                        <li>有利于不同设备的解析</li>
+                        <li>有利于团队的开发维护</li>
+                    </ul>
+                    <!-- 2 -->
+                    <h2>2 为什么要在html文件开头加上一个&lt;!DOCTYPE html&gt;</h2>
+                    <ul>
+                        <li>告诉浏览器使用哪个版本的HTML规范来渲染文档。DOCTYPE不存在或形式不正确会导致HTML文档以混杂模式呈现。</li>
+                    </ul>
+                    <!-- 3 -->
+                    <h2>4 HTML5为什么只需要写&lt;!DOCTYPE html&gt;？ </h2>
+                    <ul>
+                        <li>HTML5不基于SGML，所以不需要引用DTD(DTD 文档类型定义）。在HTML5中&lt;!DOCTYPE&gt;只有一种</li>
+                        <li>在HTML4.01中，&lt;!DOCTYPE&gt;声明引用DTD，因为HTML4.01基于SGML。DTD规定了标记语言的规则，这样浏览器才能正确的呈现内容。在HTML4.01中有三种&lt;!DOCTYPE&gt;声明。</li>
+                    </ul>
+                    <!-- 4 -->
+                    <h2>4 行内元素有哪些？块级元素有哪些？</h2>
+                    <ul>
+                        <li>行内元素：<code>a</code>、<code>span</code>、<code>img</code>、<code>input</code>、<code>select</code>
+                        </li>
+                        <li>块级元素：<code>div</code>、<code>ul</code>、<code>ol</code>、<code>li</code>、<code>li</code>
+                        </li>
+                    </ul>
+                    <!-- 5 -->
+                    <h2>5 meta viewport 是做什么用的，怎么写？</h2>
+                    <ul>
+                        <li>控制页面在移动端不要缩小显示。</li>
+                        <li>&lt;meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt;
+                        </li>
+                    </ul>
+                    <!-- 6 -->
+                    <h2>6 HTML5的新增特性</h2>
+                    <li>新增加了图像、位置、存储、多任务等功能。</li>
+                    <ul>
+                        <li>新增功能标签：可以用作画板的<code>canvas</code>，用于媒介回放的<code>video</code>和<code>audio</code>元素等</li>
+                        <li>本地离线存储：<code>localStorage</code>长期存储数据，浏览器关闭后数据不丢失;<code>sessionStorage</code>的数据在浏览器关闭后自动删除</li>
+                        <li>语意化更好的标签：<code>figure</code>、<code>footer</code>、<code>header</code>、<code>aside</code>、<code>time</code> 等标签</li>
+                        <li>位置API：<code>Geolocation</code>
+                        </li>
+                        <li>表单控件：<code>calendar</code> <code>date</code> <code>time</code> <code>email</code> <code>url</code> <code>search</code>
+                        </li>
+                        <li>新的技术：<code>Web Worker</code>(web worker是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 在后台运行) <code>Web Socket</code>
+                        </li>
+                        <li>拖放API：<code>drag</code>、<code>drop</code>
+                        </li>
+                        <li>离线网路程序：能够让网页在客户端本地高效地离线运行。</li>
+                        <li>History API：允许对浏览器历史记录进行操作。这对于那些交互地加载新信息的页面尤其有用。</li>
+                    </ul>
+                    <!-- 7 -->
+                    <h2>7 介绍一下你对浏览器内核的理解？</h2>
+                    <ul>
+                        <li>主要分成两部分：渲染引擎(Layout Engine或Rendering Engine)和JS引擎。</li>
+                        <li>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。</li>    
+                        <P>JS引擎：解析和执行javascript来实现网页的动态效果。</li>
+                        <li>最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</li>
+                    </ul>
+                    <!-- 8 -->
+                    <h2>8 常见的浏览器内核及对应浏览器</h2>
+                    <ul>
+                        <li>
+                        <code>Trident</code>：IE内核</li>
+                        <li>
+                        <code>Gecko</code>：Firefox内核</li>
+                        <li>
+                        <code>Presto</code>：Opera前内核(已废弃)</li>
+                        <li>
+                        <code>Webkit</code>：Safari内核，Chrome内核原型，开源</li>
+                        <li>
+                        <code>Blink</code>：由Google和Opera Software开发，Chrome（28及往后版本）、Opera（15及往后版本）和Yandex浏览器中使用</li>
+                    </ul>
+                    <!-- 9 -->
+                    <h2>9 defer 和 async 的区别</h2>
+                        <ul>
+                            <li>没有defer或async，浏览器在遇到script标签后，会立即加载并执行标签中的脚本，“立即”指的是在渲染该script标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。</li>
+                            <li>有defer，加载后续文档元素的过程将和script.js的加载并行进行（异步），但是script.js的执行要在所有元素解析完成之后，DOMContentLoaded事件触发之前完成。</li>
+                            <li>有async，加载和渲染后续文档元素的过程将和script.js的加载并行进行（异步），但当script.js加载完后会立即执行，即停止加载和渲染后续文档元素，执行script.js。</li>
+                        </ul>
+                    <img src="https://image-static.segmentfault.com/144/351/1443517782-57c6928b20b56_articlex">
+                    <li>如图所示，但需要注意以下几点</li>
+                    <ul>
+                        <li>关于<code>defer</code>，此图未尽之处在于它是按照加载顺序执行脚本的，这一点要善加利用</li>
+                        <li>关于<code>async</code>，它的脚本加载顺序是乱序的，谁先加载完执行谁</li>
+                    </ul>
+                    <!-- 
+                        https://segmentfault.com/a/1190000018122219
+                    以上 
+                     -->
+                    <!-- 10 -->
+                    <h2>10 介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？</h2>
+                    <ul>
+                        <li>标准盒子模型：宽度=内容的宽度（content）+ border + padding + margin</li>
+                        <li>低版本IE盒子模型：宽度=内容宽度（content+border+padding）+ margin</li>
+                    </ul>
+
+                    <!-- 11 -->
+                    <h2>11 box-sizing属性？</h2>
+                    <ul>
+                        <li>用来控制元素的盒子模型的解析模式，默认为content-box</li>
+                        <li>context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/宽</li>
+                        <li>border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽</li>
+                    </ul>
+                    <!-- 12 -->
+                    <h2>12 CSS选择器有哪些？哪些属性可以继承？</h2>
+                    <ul>
+                        <li>CSS选择符：id选择器(#myid)、类选择器(.myclassname)、标签选择器(div, h1, li)、相邻选择器(h1 + li)、子选择器（ul > li）、后代选择器（li a）、通配符选择器（*）、属性选择器（a[rel=”external”]）、伪类选择器（a:hover, li:nth-child）</li>
+                        <li>可继承的属性：font-size, font-family, color</li>
+                        <li>不可继承的样式：border, padding, margin, width, height</li>
+                        <li>优先级（就近原则）：!important > [ id > class > tag ],important 比内联优先级高</li>
+                    </ul>
+                    <!-- 13 -->
+                    <h2>13 CSS优先级算法如何计算？</h2>
+                    <ul>
+                        <li>元素选择符： 1</li>
+                        <li>class选择符： 10</li>
+                        <li>id选择符：100</li>
+                        <li>元素标签：1000</li>
+                        <li>!important声明的样式优先级最高，如果冲突再进行计算。</li>
+                        <li>如果优先级相同，则选择最后出现的样式。</li>
+                        <li>继承得到的样式的优先级最低。</li>
+                    </ul>
+                    <!-- 14 -->
+                    <h2>14 CSS3新增伪类有那些？</h2>
+                    <ul>
+                        <li>li:first-of-type 选择属于其父元素的首个元素</li>
+                        <li>li:last-of-type 选择属于其父元素的最后元素</li>
+                        <li>li:only-of-type 选择属于其父元素唯一的元素</li>
+                        <li>li:only-child 选择属于其父元素的唯一子元素</li>
+                        <li>li:nth-child(2) 选择属于其父元素的第二个子元素</li>
+                        <li>:enabled :disabled 表单控件的禁用状态。</li>
+                        <li>:checked 单选框或复选框被选中。</li>
+                    </ul>
+                    <!-- 15 -->
+                    <h2>15 如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？</h2>
+                    <img src="../Blog/Interview‘s Img/15.jpg" alt="">
+                    <p>还有更加优雅的居中方式就是用flexbox,暂时没有整理</p>
+                    <!-- 16 -->
+                    <h2>16 display有哪些值？说明他们的作用？</h2>
+                    <ul>
+                        <li>inline（默认）–内联</li>
+                        <li>none–隐藏</li>
+                        <li>block–块显示</li>
+                        <li>table–表格显示</li>
+                        <li>list-item–项目列表</li>
+                        <li>inline-block</li>
+                    </ul>
+                    <!-- 17 -->
+                    <h2>17 position的值？</h2>
+                    <ul>
+                        <li>static（默认）：按照正常文档流进行排列；</li>
+                        <li>relative（相对定位）：不脱离文档流，参考自身静态位置通过 top, bottom, left, right 定位；</li>
+                        <li>absolute(绝对定位)：参考距其最近一个不为static的父级元素通过top, bottom, left, right 定位；</li>
+                        <li>fixed(固定定位)：所固定的参照对像是可视窗口。</li>
+                    </ul>
+                    <!-- 18 -->
+                    <h2>18 CSS3有哪些新特性？</h2>
+                    <ul>
+                        <li>RGBA和透明度</li>
+                        <li>background-image background-origin(content-box/padding-box/border-box) background-size background-repeat</li>
+                        <li>word-wrap（对长的不可分割单词换行）word-wrap：break-word</li>
+                        <li>文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）</li>
+                        <li>font-face属性：定义自己的字体</li>
+                        <li>圆角（边框半径）：border-radius 属性用于创建圆角</li>
+                        <li>边框图片：border-image: url(border.png) 30 30 round</li>
+                        <li>盒阴影：box-shadow: 10px 10px 5px #888888</li>
+                        <li>媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性</li>
+                    </ul>
+                    <!-- 19 -->
+                    <h2>19 请解释一下CSS3的flexbox（弹性盒布局模型）,以及适用场景？</h2>
+                    <ul>
+                        <li>该布局模型的目的是提供一种更加高效的方式来对容器中的条目进行布局、对齐和分配空间。在传统的布局方式中，block 布局是把块在垂直方向从上到下依次排列的；而 inline 布局则是在水平方向来排列。弹性盒布局并没有这样内在的方向限制，可以由开发人员自由操作。</li>
+                        <li>试用场景：弹性布局适合于移动前端开发，在Android和ios上也完美支持。</li>
+                    </ul>
+                    <!-- 20 -->
+                    <h2>20 用纯CSS创建一个三角形的原理是什么？</h2>
+                    <p>首先，需要把元素的宽度、高度设为0。然后设置边框样式。</p>
+                    <img src="../Blog/Interview‘s Img/20.jpg" alt="">
+                    <!-- 21 -->
+                    <h2>21 一个满屏品字布局如何设计？</h2>
+                    <p>第一种真正的品字：</p>
+                    <ol>
+                        <li>三块高宽是确定的；</li>
+                        <li>上面那块用margin: 0 auto;居中；</li>
+                        <li>下面两块用float或者inline-block不换行；</li>
+                        <li>用margin调整位置使他们居中。</li>
+                    </ol>
+                    <p>第二种全屏的品字布局:</p>
+                    <ul>
+                        <li>上面的div设置成100%，下面的div分别宽50%，然后使用float或者inline使其不换行。</li>
+                    </ul>
+                    <!-- 22 -->
+                    <h2>22 常见的兼容性问题？</h2>
+                    <ol>
+                        <li>不同浏览器的标签默认的margin和padding不一样。*{margin:0;padding:0;}</li>
+                        <li>IE6双边距bug：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大。hack：display:inline;将其转化为行内属性。</li>
+                        <li>渐进识别的方式，从总体中逐渐排除局部。首先，巧妙的使用“9”这一标记，将IE浏览器从所有情况中分离出来。接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。</li>
+                        <img src="../Blog/Interview‘s Img/22.jpg" alt="">
+                        <li>设置较小高度标签（一般小于10px），在IE6，IE7中高度超出自己设置高度。hack：给超出高度的标签设置overflow:hidden;或者设置行高line-height 小于你设置的高度。</li>
+                        <li>IE下，可以使用获取常规属性的方法来获取自定义属性,也可以使用getAttribute()获取自定义属性；Firefox下，只能使用getAttribute()获取自定义属性。解决方法:统一通过getAttribute()获取自定义属性。</li>
+                        <li>Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决。</li>
+                        <li>超链接访问过后hover样式就不出现了，被点击访问过的超链接样式不再具有hover和active了。解决方法是改变CSS属性的排列顺序:L-V-H-A ( love hate ): a:link {} a:visited {} a:hover {} a:active {}</li>
+                    </ol>
+                    <!-- 23 -->
+                    <h2>23 为什么要初始化CSS样式？</h2>
+                    <ul>
+                        <li>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。</li>
+                    </ul>
+                    <!-- 24 -->
+                    <h2>24 absolute的containing block计算方式跟正常流有什么不同？</h2>
+                    <ul>
+                        <li>无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
+                            <ol>
+                                <li>若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形；</li>
+                                <li>否则,则由这个祖先元素的 padding box 构成。</li>
+                            </ol>
+                        </li>
+                        <li>如果都找不到，则为 initial containing block。</li>
+                        <p> </p>
+                        <li>补充：
+                            <ol>
+                                <li>static(默认的)/relative：简单说就是它的父元素的内容框（即去掉padding的部分）</li>
+                                <li>absolute: 向上找最近的定位为absolute/relative的元素</li>
+                                <li>fixed: 它的containing block一律为根元素(html/body)</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <!-- 25 -->
+                    <h2>25 CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？</h2>
+                    <ul>
+                        <li>
+                            当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
+                            <ul>
+                                <li>chrome中，使用collapse值和使用hidden没有区别。</li>
+                                <li>firefox，opera和IE，使用collapse值和使用display：none没有什么区别。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- 26 -->
+                    <h2>26 display:none与visibility：hidden的区别？</h2>
+                    <ul>
+                        <li>display：none 不显示对应的元素，在文档布局中不再分配空间（回流+重绘）</li>
+                        <li>visibility：hidden 隐藏对应元素，在文档布局中仍保留原来的空间（重绘）</li>
+                    </ul>
+                    <!-- 27 -->
+                    <h2>27 position跟display、overflow、float这些特性相互叠加后会怎么样？</h2>
+                    <ul>
+                        <li>display属性规定元素应该生成的框的类型；position属性规定元素的定位类型；float属性是一种布局方式，定义元素在哪个方向浮动。</li>
+                        <li>类似于优先级机制：position：absolute/fixed优先级最高，有他们在时，float不起作用，display值需要调整。float 或者absolute定位的元素，只能是块元素或表格。</li>
+                    </ul>
+                    <!-- 28 -->
+                    <h2>28 对BFC规范(块级格式化上下文：block formatting context)的理解？</h2>
+                    <ul>
+                        <li>BFC规定了内部的Block Box如何布局。</li>
+                        <li>定位方案：
+                            <ol>
+                                <li>内部的Box会在垂直方向上一个接一个放置。</li>
+                                <li>Box垂直方向的距离由margin决定，属于同一个BFC的两个相邻Box的margin会发生重叠。</li>
+                                <li>每个元素的margin box 的左边，与包含块border box的左边相接触。</li>
+                                <li>BFC的区域不会与float box重叠。</li>
+                                <li>BFC是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。</li>
+                                <li>计算BFC的高度时，浮动元素也会参与计算。</li>
+                            </ol>
+                        </li>
+                        <li>满足下列条件之一就可触发BFC
+                            <ol>
+                                <li>根元素，即html</li>
+                                <li>float的值不为none（默认）</li>
+                                <li>overflow的值不为visible（默认）</li>
+                                <li>display的值为inline-block、table-cell、table-caption</li>
+                                <li>position的值为absolute或fixed</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <!-- 29 -->
+                    <h2>29 为什么会出现浮动和什么时候需要清除浮动？清除浮动的方式？</h2>
+                    <ul>
+                        <li>浮动元素碰到包含它的边框或者浮动元素的边框停留。由于浮动元素不在文档流中，所以文档流的块框表现得就像浮动框不存在一样。浮动元素会漂浮在文档流的块框上。</li>
+                        <li>浮动带来的问题：
+                            <ol>
+                                <li>父元素的高度无法被撑开，影响与父元素同级的元素</li>
+                                <li>与浮动元素同级的非浮动元素（内联元素）会跟随其后</li>
+                                <li>若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面显示的结构。</li>
+                            </ol>
+                        </li>
+                        <li>清除浮动的方式：
+                            <ol>
+                                <li>父级div定义height</li>
+                                <li>最后一个浮动元素后加空div标签 并添加样式clear:both。</li>
+                                <li>包含浮动元素的父标签添加样式overflow为hidden或auto。</li>
+                                <li>父级div定义zoom</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <!-- 30 -->
+                    <h2>30 上下margin重合的问题</h2>
+                    <p>在重合元素外包裹一层容器，并触发该容器生成一个BFC。</p>
+                    <p>例子：</p>
+                    <img src="../Blog/Interview‘s Img/30(1).jpg" alt="">
+                    <img src="../Blog/Interview‘s Img/30(2).jpg" alt="">
+                    <!-- 31 -->
+                    <h2>31 设置元素浮动后，该元素的display值是多少？</h2>
+                    <ul>
+                        <li>自动变成display:block</li>
+                    </ul>
+
+                    <!-- 32 -->
+                    <h2>32 移动端的布局用过媒体查询吗？</h2>
+                    <ul>
+                        <li>通过媒体查询可以为不同大小和尺寸的媒体定义不同的css，适应相应的设备的显示。
+                            <ol>
+                                <li>&lt;head>里边&lt;link rel=”stylesheet” type=”text/css” href=”xxx.css” media=”only screen and (max-device-width:480px)”></li>
+                                <li>CSS : @media only screen and (max-device-width:480px) {/css样式/}</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <!-- 33 -->
+                    <h2>33 使用 CSS 预处理器吗？</h2>
+                    <ul><li>Less sass</li></ul>
+                    <!-- 34 -->
+                    <h2>34 CSS优化、提高性能的方法有哪些？</h2>
+                    <ul>
+                        <li>避免过度约束</li>
+                        <li>避免后代选择符</li>
+                        <li>避免链式选择符</li>
+                        <li>使用紧凑的语法</li>
+                        <li>避免不必要的命名空间</li>
+                        <li>避免不必要的重复</li>
+                        <li>最好使用表示语义的名字。一个好的类名应该是描述他是什么而不是像什么</li>
+                        <li>避免！important，可以选择其他选择器</li>
+                        <li>尽可能的精简规则，你可以合并不同类里的重复规则</li>
+                    </ul>
+                    <!-- 35 -->
+                    <h2>35 浏览器是怎样解析CSS选择器的？</h2>
+                    <ul>
+                        <li>CSS选择器的解析是从右向左解析的。若从左向右的匹配，发现不符合规则，需要进行回溯，会损失很多性能。若从右向左匹配，先找到所有的最右节点，对于每一个节点，向上寻找其父节点直到找到根元素或满足条件的匹配规则，则结束这个分支的遍历。两种匹配规则的性能差别很大，是因为从右向左的匹配在第一步就筛选掉了大量的不符合条件的最右节点（叶子节点），而从左向右的匹配规则的性能都浪费在了失败的查找上面。</li>
+                        <li>而在 CSS 解析完毕后，需要将解析的结果与 DOM Tree 的内容一起进行分析建立一棵 Render Tree，最终用来进行绘图。在建立 Render Tree 时（WebKit 中的「Attachment」过程），浏览器就要为每个 DOM Tree 中的元素根据 CSS 的解析结果（Style Rules）来确定生成怎样的 Render Tree。</li>
+                    </ul>
+                    <!-- 36 -->
+                    <h2>36 在网页中的应该使用奇数还是偶数的字体？为什么呢？</h2>
+                    <ul>
+                        <li>使用偶数字体。偶数字号相对更容易和 web 设计的其他部分构成比例关系。Windows 自带的点阵宋体（中易宋体）从 Vista 开始只提供 12、14、16 px 这三个大小的点阵，而 13、15、17 px时用的是小一号的点。（即每个字占的空间大了 1 px，但点阵没变），于是略显稀疏。</li>
+                    </ul>
+                    <!-- 37 -->
+                    <h2>37 margin和padding分别适合什么场景使用？</h2>
+                    <ul>
+                        <li>何时使用margin：
+                            <ol>
+                                <li>需要在border外侧添加空白</li>
+                                <li>空白处不需要背景色</li>
+                                <li>上下相连的两个盒子之间的空白，需要相互抵消时。</li>
+                            </ol>
+                        </li>
+                        <li>何时使用padding：
+                            <ol>
+                                <li>需要在border内侧添加空白</li>
+                                <li>空白处需要背景颜色</li>
+                                <li>上下相连的两个盒子的空白，希望为两者之和。</li>
+                            </ol>
+                        </li>
+                        <li>兼容性的问题：在IE5 IE6中，为float的盒子指定margin时，左侧的margin可能会变成两倍的宽度。通过改变padding或者指定盒子的display：inline解决。</li>
+                    </ul>
+                    <!-- 38 -->
+                    <h2>38 元素竖向的百分比设定是相对于容器的高度吗？</h2>
+                    <ul>
+                        <li>当按百分比设定一个元素的宽度时，它是相对于父容器的宽度计算的，但是，对于一些表示竖向距离的属性，例如 padding-top , padding-bottom , margin-top , margin-bottom 等，当按百分比设定它们时，依据的也是父容器的宽度，而不是高度。</li>
+                    </ul>
+                    <!-- 39 -->
+                    <h2>39 全屏滚动的原理是什么？用到了CSS的哪些属性？</h2>
+                    <ol>
+                        <li>原理：有点类似于轮播，整体的元素一直排列下去，假设有5个需要展示的全屏页面，那么高度是500%，只是展示100%，剩下的可以通过transform进行y轴定位，也可以通过margin-top实现</li>
+                        <li>overflow：hidden；transition：all 1000ms ease；</li>
+                    </ol>
+
+                    <!-- 40 -->
+                    <h2>40 什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE？</h2>
+                    <ul>
+                        <li>响应式网站设计(Responsive Web design)是一个网站能够兼容多个终端，而不是为每一个终端做一个特定的版本。</li>
+                        <li>基本原理是通过媒体查询检测不同的设备屏幕尺寸做处理。</li>
+                        <li>页面头部必须有meta声明的viewport。</li>
+                    </ul>
+                    <img src="../Blog/Interview‘s Img/40.jpg" alt="">
+                    <!-- 41 -->
+                    <h2>41 视差滚动效果？</h2>
+                    <ul>
+                        <li>
+                            视差滚动（Parallax Scrolling）通过在网页向下滚动的时候，控制背景的移动速度比前景的移动速度慢来创建出令人惊叹的3D效果。
+                            <ol>
+                                <li>
+                                    CSS3实现
+                                    <ul>
+                                        <li>优点：开发时间短、性能和开发效率比较好，缺点是不能兼容到低版本的浏览器</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    jQuery实现
+                                    <ul>
+                                        <li>通过控制不同层滚动速度，计算每一层的时间，控制滚动效果。</li>
+                                        <li>优点：能兼容到各个版本的，效果可控性好</li>
+                                        <li>缺点：开发起来对制作者要求高</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    插件实现方式
+                                    <ul>
+                                        <li>例如：parallax-scrolling，兼容性十分好</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <!-- 42 -->
+                    <h2>42 ::before 和 :after中双冒号和单冒号有什么区别？解释一下这2个伪元素的作用</h2>
+                    <ul>
+                        <ol>
+                            <li>单冒号(:)用于CSS3伪类，双冒号(::)用于CSS3伪元素。</li>
+                            <li>::before就是以一个子元素的存在，定义在元素主体内容之前的一个伪元素。并不存在于dom之中，只存在在页面之中。</li>
+                        </ol>
+                        <li>
+                            :before 和 :after 这两个伪元素，是在CSS2.1里新出现的。起初，伪元素的前缀使用的是单冒号语法，但随着Web的进化，在CSS3的规范里，伪元素的语法被修改成使用双冒号，成为::before ::after
+                        </li>
+                    </ul>
+                    <!-- 43 -->
+                    <h2>43 你对line-height是如何理解的？</h2>
+                    <ul>
+                        <li>行高是指一行文字的高度，具体说是两行文字间基线的距离。CSS中起高度作用的是height和line-height，没有定义height属性，最终其表现作用一定是line-height。</li>
+                        <li>单行文本垂直居中：把line-height值设置为height一样大小的值可以实现单行文字的垂直居中，其实也可以把height删除。</li>
+                        <li>多行文本垂直居中：需要设置display属性为inline-block。</li>
+                    </ul>
+                    <!-- 44 -->
+                    <h2>44 怎么让Chrome支持小于12px的文字？</h2>
+                    <img src="../Blog/Interview‘s Img/44.jpg" alt="">
+                    <!-- 45 -->
+                    <h2>45 让页面里的字体变清晰，变细用CSS怎么做？</h2>
+                    <ul>
+                        <li>-webkit-font-smoothing在window系统下没有起作用，但是在IOS设备上起作用-webkit-font-smoothing：antialiased是最佳的，灰度平滑。</li>
+                    </ul>
+                    <!-- 46 -->
+                    <h2>46 position:fixed;在android下无效怎么处理？</h2>
+                    <img src="../Blog/Interview‘s Img/46.jpg" alt="">
+                    <!-- 47 -->
+                    <h2>47 如果需要手动写动画，你认为最小时间间隔是多久，为什么？</h2>
+                    <ul>
+                        <li>多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms。</li>
+                    </ul>
+                    <!-- 48 -->
+                    <h2>48 li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</h2>
+                    <ul>
+                        <li>行框的排列会受到中间空白（回车空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。</li>
+                        <li>解决方法：
+                            <ol>
+                                <li>可以将&lt;li>代码全部写在一排</li>
+                                <li>浮动li中float：left</li>
+                                <li>在ul中用font-size：0（谷歌不支持）；可以使用letter-space：-3px</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <!-- 49 -->
+                    <h2>49 display:inline-block 什么时候会显示间隙？</h2>
+                    <ol>
+                        <li>有空格时候会有间隙 解决：移除空格</li>
+                        <li>margin正值的时候 解决：margin使用负值</li>
+                        <li>使用font-size时候 解决：font-size:0、letter-spacing、word-spacing</li>
+                    </ol>
+                    <!-- 50 -->
+                    <h2>50  有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度</h2>
+                    <ul><li>外层div使用position：relative；高度要求自适应的div使用position: absolute; top: 100px; bottom: 0; left: 0</li></ul>
+                    <!-- 51 -->
+                    <h2>51 png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？</h2>
+                    <ol>
+                        <li>png是便携式网络图片（Portable Network Graphics）是一种无损数据压缩位图文件格式.优点是：压缩比高，色彩好。 大多数地方都可以用。</li>
+                        <li>jpg是一种针对相片使用的一种失真压缩方法，是一种破坏性的压缩，在色调及颜色平滑变化做的不错。在www上，被用来储存和传输照片的格式。</li>
+                        <li>gif是一种位图文件格式，以8位色重现真色彩的图像。可以实现动画效果.</li>
+                        <li>webp格式是谷歌在2010年推出的图片格式，压缩率只有jpg的2/3，大小比png小了45%。缺点是压缩的时间更久了，兼容性不好，目前谷歌和opera支持。</li>
+                    </ol>
+                    <!-- 52 -->
+                    <h2>52 style标签写在body后与body前有什么区别？</h2>
+                    <ul>
+                        <li>页面加载自上而下 当然是先加载样式。</li>
+                        <li>写在body标签后由于浏览器以逐行方式对HTML文档进行解析，当解析到写在尾部的样式表（外联或写在style标签）会导致浏览器停止之前的渲染，等待加载且解析样式表完成之后重新渲染，在windows的IE下可能会出现FOUC现象（即样式失效导致的页面闪烁问题）</li>
+                    </ul>
+                    <!-- 53 -->
+                    <h2>53 CSS属性overflow属性定义溢出元素内容区的内容会如何处理?</h2>
+                    <ul>
+                        <li>参数是scroll时候，必会出现滚动条。</li>
+                        <li>参数是auto时候，子元素内容大于父元素时出现滚动条。</li>
+                        <li>参数是visible时候，溢出的内容出现在父元素之外。</li>
+                        <li>参数是hidden时候，溢出隐藏。</li>
+                    </ul>
+                    <!-- 54 -->
+                    <h2>54 阐述一下CSS Sprites</h2>
+                    <ul><li>将一个页面涉及到的所有图片都包含到一张大图中去，然后利用CSS的 background-image，background- repeat，background-position 的组合进行背景定位。利用CSS Sprites能很好地减少网页的http请求，从而大大的提高页面的性能；CSS Sprites能减少图片的字节。</li></ul>
+                    <!--
+                         https://blog.csdn.net/u014697639/article/details/80311559
+                        以上
+                     -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </article>
+         </div>
+    </main>
+    <footer id="footer">
+        <div id="footer-wrap">
+            <div class="copyright">&copy;2019 - 2021 BY Bucaicai Changes in the Yuxi</div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" async></script>
+<!-- aplayer、meting -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<!--   一言、今日诗词   -->
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<!--鼠标点击效果-->
+<script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+    
+<script type="text/javascript">
+    console.clear();
+    console.log("%c 有朋自远方来, 不亦说乎.", "background:#24272A; color:#ffffff", "");
+    console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/Yu-Xi-Li/blog");
+    console.log("%c 版本号: %c", "background:#24272A; color:#ffffff", "", "1.0.0");
+
+
+(function($){
+	$.fn.snow = function(options){
+	var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('&#10052;'),
+	documentHeight 	= $(document).height(),
+	documentWidth	= $(document).width(),
+	defaults = {
+		minSize		: 10,
+		maxSize		: 20,
+		newOn		: 1000,
+		flakeColor	: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+	},
+	options	= $.extend({}, defaults, options);
+	var interval= setInterval( function(){
+	var startPositionLeft = Math.random() * documentWidth - 100,
+	startOpacity = 0.5 + Math.random(),
+	sizeFlake = options.minSize + Math.random() * options.maxSize,
+	endPositionTop = documentHeight - 200,
+	endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+	durationFall = documentHeight * 10 + Math.random() * 5000;
+	$flake.clone().appendTo('body').css({
+		left: startPositionLeft,
+		opacity: startOpacity,
+		'font-size': sizeFlake,
+		color: options.flakeColor
+	}).animate({
+		top: endPositionTop,
+		left: endPositionLeft,
+		opacity: 0.2
+	},durationFall,'linear',function(){
+		$(this).remove()
+	});
+	}, options.newOn);
+    };
+})(jQuery);
+$(function(){
+    $.fn.snow({ 
+	    minSize: 5, /* 定义雪花最小尺寸 */
+	    maxSize: 50,/* 定义雪花最大尺寸 */
+	    newOn: 800  /* 定义密集程度，数字越小越密集 */
+    });
+});
+
+// 浏览器搞笑标题
+var OriginTitle = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        // $('[rel="icon"]').attr('href', "/funny.ico");
+        document.title = '╭(°A°`)╮ 页面崩溃啦 ~';
+        clearTimeout(titleTime);
+    }
+    else {
+        $('[rel="icon"]').attr('href', "/favicon.ico");
+        document.title = '(ฅ>ω<*ฅ) 噫又好啦 ~' + OriginTitle;
+        titleTime = setTimeout(function () {
+            document.title = OriginTitle;
+        }, 2000);
+    }
+});
+</script>
 </body>
 </html>
