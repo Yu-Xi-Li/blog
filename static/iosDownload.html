@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
-    <meta name="description" content="国家公务员,2020年国家公务员考试时间、报名入口、报考条件、职位表、考试公告、大纲、教材用书、2019年国考真题、成绩查询,依官网2020年国考报名时间安排帮助考公务员" />
-    <meta name="keywords" content="国家公务员考试,公务员考试网,国家公务员网,公务员" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <link rel="shortcut icon" type="image/x-icon" href="//gk-questions.oss-cn-shanghai.aliyuncs.com/img/2018051517/logo_1526375858201.png" media="screen" />
@@ -40,7 +38,7 @@
         text-align: center;
         background: #fff;
         color: #ffa724;
-        bottom: 6.0rem;
+        bottom: 10rem;
         left: 50%;
         transform: translateX(-50%);
         font-size: 3.2rem;
@@ -54,12 +52,33 @@
 <body>
     <div class="content">
         <img class="logo-img" src="https://resource.sinture.com/h5/newDownloadBgIOS210731.png.png" />
-        <div class="download-btn  J_download" click=downloadApp() >下载App</div>
+        <div class="download-btn  J_download" >下载App</div>
     </div>
+    <script type="text/javascript" src="https://cdnjs.gtimg.com/cdnjs/libs/zepto/1.1.4/zepto.min.js"></script>
     <script>
-        function downloadApp(){
-            location.href = 'https://apps.apple.com/cn/app/%E5%BF%83%E7%AB%BA%E5%85%AC%E8%80%83-%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/id1273677073';
-        };
+        $(function(){
+            var isWeixin = navigator.userAgent.indexOf('MicroMessenger')>-1;
+            var device = 'android';
+            var ua=window&&window.navigator&&window.navigator.userAgent;
+            var text = '浏览器';
+            if (/(iPhone|iPod|ios|ipad)/i.exec(ua)){
+                device = 'ios'
+                text = 'Safari';
+            }
+            // 下载APP
+            $('.J_download').on('click', function(){
+                if (isWeixin) {
+                    return;
+                }
+                if (device == 'ios') {
+                    location.href = 'https://apps.apple.com/cn/app/%E5%BF%83%E7%AB%BA%E5%85%AC%E8%80%83-%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/id1273677073';
+                    
+                }else{
+                    alert('请打开应用商店搜索"心竺公考"进行下载')
+                }
+            })
+
+        })
     </script>
 </body>
 </html>
