@@ -126,12 +126,13 @@
 <body>
     <div class="content">
         <img class="logo-img" src="https://resource.sinture.com/h5/newDownloadBgIOS210731.png.png" />
-        <div class="download-btn  J_download">下载App</div>
+        <div class="download-btn  J_download" click=downloadApp() >下载App</div>
     </div>
     <script type="text/javascript" src="https://cdnjs.gtimg.com/cdnjs/libs/zepto/1.1.4/zepto.min.js"></script>
     <script>
-        import './index.less';
-
+        function downloadApp(){
+            location.href = 'https://apps.apple.com/cn/app/%E5%BF%83%E7%AB%BA%E5%85%AC%E8%80%83-%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/id1273677073';
+        };
         $(function(){
             var isWeixin = navigator.userAgent.indexOf('MicroMessenger')>-1;
             var device = 'android';
