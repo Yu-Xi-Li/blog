@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心竺公考</title>
+</head>
+<style>
+    html, body, div, ul, li{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+    }
+    html,body{
+        width: 100%;
+        height:100%;
+    }
+    html{
+        font-size: 5px;
+    }
+    .header{
+        position: relative;
+        padding: 4.0rem 7.2rem 4.0rem 6.0rem;
+        background-color: #343434;
+        color: #747474;
+        font-size: 2.6rem;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    .header img{
+        width: 6.0rem;
+        height: 8.0rem;
+        position: absolute;
+        top: 1.2rem;
+        right: 2.0rem;
+    }
+    .mask {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 100;
+    }
+    .mask img {
+        position: fixed;
+        top: 0;
+        right: 4.0rem;
+        width: 16.0rem;
+        height: 32.0rem;
+    }
+    .mask p {
+        position: fixed;
+        color: #fff;
+        font-size: 4.4rem;
+        font-weight: bold;
+        top: 34.0rem;
+        right: 4.0rem;
+    }
+    .logo-text{
+        margin-top: 6.0rem;
+        color: #fff;
+        font-size: 4.8rem;
+    }
+    .content {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #fed66f, #fdbc67);
+        position: relative;
+    }
+    .open-btn{
+        position: fixed;
+        width: 63.2rem;
+        height: 8.8rem;
+        border-radius: 8.0rem;
+        line-height: 8.8rem;
+        text-align: center;
+        background: #ffa724;
+        color: #fff;
+        bottom: 17.0rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3.2rem;
+        font-weight: 600;
+    }
+    .download-btn {
+        position: fixed;
+        width: 63.2rem;
+        height: 8.8rem;
+        border-radius: 8.0rem;
+        line-height: 8.8rem;
+        text-align: center;
+        background: #fff;
+        color: #ffa724;
+        bottom: 6.0rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3.2rem;
+        font-weight: 600;
+    }
+    .logo-img {
+        width: 100%;
+        height: auto;
+    }
+    .pulldownTip{
+        display:inline-block;
+        position: absolute;
+        top: 30px;
+        left: 40%;
+        /* right: 20%; */
+        text-align: center;
+        color: #fff;
+        font-weight: 400;
+        line-height: 1.5;
+        font-family: Helvetica Neue,Helvetica,Roboto,Segoe UI,Arial,sans-serif;
+        font-size: 4rem;
+    }
+</style>
+<body>
+    <div class="content">
+        <img class="logo-img" src="https://resource.sinture.com/h5/newDownloadBgIOS210731.png.png" />
+        <div class="download-btn  J_download">下载App</div>
+    </div>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="https://cdnjs.gtimg.com/cdnjs/libs/zepto/1.1.4/zepto.min.js"></script>
+    <script>
+        import './index.less';
+
+        $(function(){
+            var isWeixin = navigator.userAgent.indexOf('MicroMessenger')>-1;
+            var device = 'android';
+            var ua=window&&window.navigator&&window.navigator.userAgent;
+            var text = '浏览器';
+            if (/(iPhone|iPod|ios|ipad)/i.exec(ua)){
+                device = 'ios'
+                text = 'Safari';
+            }
+            // 下载APP
+            $('.J_download').on('click', function(){
+                if (isWeixin) {
+                    return;
+                }
+                if (device == 'ios') {
+                    alert('111111')
+                    location.href = 'https://apps.apple.com/cn/app/%E5%BF%83%E7%AB%BA%E5%85%AC%E8%80%83-%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D/id1273677073';
+                } else {
+                    location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.xinzhu.gongkao&from=singlemessage';
+                }
+            })
+
+        })
+    </script>
+</body>
+</html>
